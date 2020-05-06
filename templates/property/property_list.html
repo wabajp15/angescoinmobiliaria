@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <div class="container mt-3">
+
+    <div class="card-columns">
+
+      {% for property in object_list %}
+        <div class="card">
+
+          <div class="hovereffect">
+              <img class="card-img-top" src="../../media/{{ property.urlimage }}">
+              <div class="overlay">
+                 <h2>{{ property.name }}</h2>
+                   <a class="info" href="{% url 'property:detail' property.id %}">Ver Más</a>
+              </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ property.name }}</h5>
+            <p class="card-text"></p>
+            <p class="card-text text-center">
+              <small class="text-muted ">{{ property.price }} $ | {{ property.address }} | {{ property.neighborhood}}</small>
+            </p>
+            <a href="#" class="btn btn-primary btn-block">Ver Inmueble</a>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+{% endblock  %}

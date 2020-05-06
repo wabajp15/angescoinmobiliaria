@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <div class="container mt-3">
+
+    {% if object_list.count == 0 %}
+      <div class="alert alert-secondary mt-2" role="alert">
+        No hay resultados para la búsqueda: <b>"{{ search }}"</b>
+      </div>
+    {% else %}
+      <div class="alert alert-primary mt-2" role="alert">
+        Mostrando {{ object_list.count }} resultados, para la búsqueda: <b>"{{ search }}"</b>
+      </div>
+
+      <div class="card-columns">
+        {% for property in object_list %}
+          <div class="card">
+
+            <div class="hovereffect">
+                <img class="card-img-top" src="../../media/{{ property.urlimage }}">
+                <div class="overlay">
+                   <h2>{{ property.name }}</h2>
+                   <a class="info" href="{% url 'property:detail' property.id %}">Ver Más</a>
+                </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ property.name }}</h5>
+              <p class="card-text"></p>
+              <p class="card-text text-center">
+                <small class="text-muted ">{{ property.name }} min | {{ property.name }}</small>
+              </p>
+              <a href="#" class="btn btn-primary btn-block">Ver Horarios</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+    {% endif %}
+
+  </div>
+{% endblock  %}

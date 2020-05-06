@@ -1,0 +1,60 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <div class="container mt-3">
+
+    <h3>Nueva Gestión</h3>
+
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="btn btn-primary" value="guardar">
+    </form>
+
+    <center>
+     <table>
+       <tbody>
+         <tr>
+           <th>Tipo Inmuble:</th>
+           <td>{{ object.name }}</td>
+         </tr>
+         <tr>
+           <th>Precio:</th>
+           <td>{{ object.price }}</td>
+         </tr>
+         <tr>
+           <th>Direción:</th>
+           <td>{{ object.address}}</td>
+         </tr>
+         <tr>
+           <th>Barrio:</th>
+           <td>{{ object.neighborhood}}</td>
+         </tr>
+         <tr>
+           <th>Habitaciones:</th>
+           <td>{{ object.amount_rooms }}</td>
+         </tr>
+         <tr>
+           <th>Baños:</th>
+           <td>{{ object.synopsis }}</td>
+         </tr>
+         <tr>
+           <th>Area:</th>
+           <td>{{ object.length }}</td>
+         </tr>
+         <tr>
+           <th>resumen:</th>
+           <td>{{object.description}}</td>
+         </tr>
+       </tbody>
+       </center>
+     </table>
+
+
+   </div>
+
+
+{% endblock  %}

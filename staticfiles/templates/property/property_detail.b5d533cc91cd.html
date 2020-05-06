@@ -1,0 +1,66 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <div class="container mt-3">
+
+    <center><h3><b>{{ object.name }}</b></h3></center>
+
+    <div class="row mt-2">
+      <div class="col-12">
+        <center><p><img src="{% static 'Image/house1.1.jpg' %}" class="img-fluid"width="55%"></p></center>
+
+       <center>
+        <table>
+          <tbody>
+            <tr>
+              <th>Tipo Inmuble:</th>
+              <td>{{ object.name }}</td>
+            </tr>
+            <tr>
+              <th>Precio:</th>
+              <td>{{ object.price }}</td>
+            </tr>
+            <tr>
+              <th>Direción:</th>
+              <td>{{ object.address}}</td>
+            </tr>
+            <tr>
+              <th>Barrio:</th>
+              <td>{{ object.neighborhood}}</td>
+            </tr>
+            <tr>
+              <th>Habitaciones:</th>
+              <td>{{ object.amount_rooms }}</td>
+            </tr>
+            <tr>
+              <th>Baños:</th>
+              <td>{{ object.synopsis }}</td>
+            </tr>
+            <tr>
+              <th>Area:</th>
+              <td>{{ object.length }}</td>
+            </tr>
+            <tr>
+              <th>resumen:</th>
+              <td>{{object.description}}</td>
+            </tr>
+          </tbody>
+          </center>
+        </table>
+
+    <div class="col-8">
+        <p><img src="{% static 'Image/house1.jpg' %}" class="rounded float-left" alt="Responsive image" width="200"></p>
+        <p><img src="{% static 'Image/house1.2.jpg' %}"class="rounded float-right" alt="Responsive image"   width="200" ></p>
+        <p><center><img src="{% static 'Image/house1.3.jpg' %}" class="rounded" alt="Responsive image"  width="200"></center></p>
+        </div>
+
+      </div>
+      </div>
+
+      </div>
+
+
+{% endblock  %}

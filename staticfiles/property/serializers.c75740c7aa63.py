@@ -1,0 +1,9 @@
+from rest_framework import serializers
+from .models import Property
+
+class PropertySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Property
+        fields = ('id', 'name', 'price', 'city', 'neighborhood', 'address',
+                  'description', 'available', 'urlimage')

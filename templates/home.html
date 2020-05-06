@@ -1,0 +1,46 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <div class="container">
+    <img src="{% static 'images/banner.png' %}" class="img-fluid" title="Banner principal" />
+  </div>
+
+  <div class="container mt-3">
+    <h4>ANGESCO</h4>
+    <h6 class="card-title">La Mejor Opción</h6>
+    <p class="card-text">¿Te mudas? ¿Buscas la casa de tus sueños? En ANGESCO Inmobiliaria Manizales encontrarás un sin número de inmuebles
+      que seguramente se adapten a tus necesidades. ¿Quieres vender o rentar tu departamento? Cada día miles de personas buscan alojamiento
+      en ANGESCO.  éxitos .</p>
+      <p class="card-text"> Contactanos </p>
+
+    <hr>
+    <div class="card-columns">
+
+      {% for property in properties %}
+        <div class="card">
+
+          <div class="hovereffect">
+              <img class="card-img-top" src="../../media/{{ movie.urlimage }}">
+              <div class="overlay">
+                 <h2>{{ property.name }}</h2>
+                 <a class="info" href="{% url 'peliculas:detalle' movie.id %}">Ver Mas </a>
+              </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ property.name }}</h5>
+            <p class="card-text"></p>
+            <p class="card-text text-center">
+              <small class="text-muted ">{{ property.name}} min | {{ property.name}}  </small>
+            </p>
+            <a href="#" class="btn btn-primary btn-block">Detalle Inmubles</a>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+{% endblock  %}

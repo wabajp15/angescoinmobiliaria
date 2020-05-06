@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+<!-- Informatión inmobiliaria -->
+{% block content %}
+<div class="container">
+    <h1>Bienvenidos a ANGESCO Inmuebles</h1>
+    <div class="row">
+      <div class="col-md">
+          <div class="card">
+              <img src="{% static 'Image/somos.png' %}" class="img-fluid" title="Banner Bienvenida" />
+            <div class="card-body">
+              <h4 class="card-title">SOMOS</h4>
+              <p class="card-text"> ANGESCO es una empresa inmobiliaria activa, dinámica y muy eficiente en la gestión de Inmubles tanto de segunda mano como de nueva promoción. </p>
+              <p class="card-text"> Nuestro objetivo es siempre conseguir el mayor bienestar posible en la adquisición de los inmuebles y la mayor eficacia y rentabilidad en el presente
+                y el futuro nos adaptándonos a las necesidades del usuario y el cliente brindando un mejor servicio y con un trato personalizado a aquellos propietarios que quieren vender
+                 ó alquilar su propiedad y aquellos clientes que buscan una vivienda en compra o alquiler .</p>
+
+              <hr>
+
+                return render(request, hello.html, context)
+              </div>
+          </div>
+      </div>
+
+
+
+{% endblock  %}
